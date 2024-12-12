@@ -649,9 +649,9 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="js/app.min.js"></script>
     <script>
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
+        document.getElementById('contactForm').addEventListener('submit', async function (e) {
             e.preventDefault();
-    
+        
             // Get form values
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
@@ -663,36 +663,37 @@
                 displayMessage('Invalid email format.', 'error');
                 return;
             }
-    
+        
             // Validate other fields
             if (!name || !message) {
                 displayMessage('All fields are required.', 'error');
                 return;
             }
-    
-            // Send data via Fetch API
-            fetch('send_email.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ name, email, message }),
-            })
-                .then((response) => response.text())
-                .then((data) => {
-                    displayMessage(data, 'success');
-                })
-                .catch((error) => {
-                    displayMessage('Error sending the message. Please try again later.', 'error');
+        
+            // Send data via Fetch API using async/await
+            try {
+                const response = await fetch('send_email.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ name, email, message }),
                 });
+                
+                const data = await response.text();
+                displayMessage(data, 'success');
+            } catch (error) {
+                displayMessage('Error sending the message. Please try again later.', 'error');
+            }
         });
-    
+        
         function displayMessage(message, type) {
             const responseMessage = document.getElementById('responseMessage');
             responseMessage.textContent = message;
             responseMessage.style.color = type === 'error' ? 'red' : 'green';
         }
     </script>
+    
 </body>
 
 </html>
