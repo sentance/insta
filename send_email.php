@@ -1,8 +1,8 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = htmlspecialchars($_POST['name']);
-    $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
-    $message = htmlspecialchars($_POST['message']);
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
 
     if ($email && $name && $message) {
         $to = "sentance22@gmail.com"; // Replace with your email

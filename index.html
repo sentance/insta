@@ -669,17 +669,14 @@
                 displayMessage('All fields are required.', 'error');
                 return;
             }
-            const formData = new FormData();
-            formData.append('name', name);
-            formData.append('email', email);
-            formData.append('message', message);
+    
             // Send data via Fetch API
             fetch('send_email.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: formData,
+                body: JSON.stringify({ name, email, message }),
             })
                 .then((response) => response.text())
                 .then((data) => {
