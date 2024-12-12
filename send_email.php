@@ -12,7 +12,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $name = htmlspecialchars($data['name']);
         $email = filter_var($data['email'], FILTER_VALIDATE_EMAIL);
         $message = htmlspecialchars($data['message']);
-
+        var_dump($name);
+        var_dump($email);
+        var_dump($message);
         // Check if the data is valid
         if ($email && $name && $message) {
             $to = "sentance22@gmail.com"; // Replace with your email
