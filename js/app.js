@@ -34,7 +34,7 @@ jQuery(document).ready(function ($) {
         infinite: false,
         slidesToShow: 2.25,
         slidesToScroll: 1,
-        arrows: true,
+        arrows: false,
         dots: true,
         responsive: [
             {
@@ -58,6 +58,7 @@ jQuery(document).ready(function ($) {
 
         // Detect scroll on the slider
         $('.services-wrap__list').on('wheel', function(e) {
+            console.log("hhhhee")
             if (isScrolling) return;  // Prevent continuous scrolling
             
             // Prevent page scrolling when slider is in focus
