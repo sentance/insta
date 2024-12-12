@@ -34,7 +34,7 @@ jQuery(document).ready(function ($) {
         infinite: false,
         slidesToShow: 2.25,
         slidesToScroll: 1,
-        arrows: false,
+        arrows: true,
         dots: true,
         responsive: [
             {
