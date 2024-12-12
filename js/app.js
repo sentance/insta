@@ -57,7 +57,7 @@ jQuery(document).ready(function ($) {
     });
 
         // Detect scroll on the slider
-        $('.services-wrap__list').on('wheel', function(e) {
+        $('.services-wrap__list').on('scroll', function(e) {
             console.log("hhhhee")
             if (isScrolling) return;  // Prevent continuous scrolling
             
