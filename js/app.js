@@ -29,7 +29,7 @@ jQuery(document).ready(function ($) {
             html.classList.toggle('fix');
         })
     }
-
+    var isScrolling = false; 
     $('.services-wrap__list').slick({
         infinite: false,
         slidesToShow: 2.25,
@@ -55,6 +55,29 @@ jQuery(document).ready(function ($) {
             },
         ]
     });
+
+        // Detect scroll on the slider
+        $('.services-wrap__list').on('wheel', function(e) {
+            if (isScrolling) return;  // Prevent continuous scrolling
+            
+            // Prevent page scrolling when slider is in focus
+            e.preventDefault();
+            isScrolling = true;
+    
+            // Scroll slider in the direction of wheel scroll
+            if (e.originalEvent.deltaY > 0) {
+                // Scroll down
+                $(this).slick('slickNext');
+            } else {
+                // Scroll up
+                $(this).slick('slickPrev');
+            }
+    
+            // Timeout to prevent continuous scrolling
+            setTimeout(function() {
+                isScrolling = false;
+            }, 300);  // Adjust timeout for smoother scrolling effect
+        });
 
     addEventListener('scroll', () => {
         addHeaderSticky();
