@@ -405,10 +405,30 @@ label {
           justify-content: center;
 }
 
-.main-wrap__flex .btn:last-child {
-  padding: 0;
+.main-wrap__flex .btn {
+  position: relative;
+}
+
+.main-wrap__flex .btn-link {
   width: 59px;
   height: 59px;
+  border-radius: 50%;
+  background-color: #C0E864;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  right: -59px;
+  position: absolute;
+}
+
+.main-wrap__flex .btn:hover .btn-link {
+  background-color: #a5de21;
 }
 
 .main-wrap__bottom {
@@ -421,9 +441,22 @@ label {
           align-items: center;
 }
 
-.main-wrap__bottom svg {
-  max-width: 168px;
+.main-wrap__bottom--flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-right: 24px;
+}
+
+.main-wrap__bottom--flex img {
+  margin-left: -10px;
+}
+
+.main-wrap__bottom--flex img:first-child {
+  margin-left: 0;
 }
 
 .main-wrap__bottom--title {
@@ -2269,27 +2302,38 @@ label {
     margin: 0;
   }
 
-  .main-wrap__flex .btn:last-child {
+  .main-wrap__flex .btn-link {
     width: 50px;
     height: 50px;
+    right: -50px;
   }
 
-  .main-wrap__flex .btn:last-child svg {
+  .main-wrap__flex .btn-link svg {
     max-width: 18px;
     max-height: 15px;
   }
 
   .main-wrap__bottom {
     margin-top: 68px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    width: 100%;
+  }
+
+  .main-wrap__bottom--flex {
+    margin-right: 8px;
   }
 
   .main-wrap__bottom img {
-    max-width: 80px;
+    max-width: 25px;
+    margin-left: -5px;
   }
 
   .main-wrap__bottom--title {
     font-size: 12px;
     line-height: 16px;
+    max-width: 100%;
   }
 
   .main-wrap__bottom--title span {
@@ -2614,6 +2658,11 @@ label {
     padding: 16px 0;
   }
 
+  .footer-wrap__socials .item img {
+    max-width: 40px;
+    max-height: 40px;
+  }
+
   .footer-wrap__nav ul li a {
     font-size: 12px;
     line-height: 16px;
@@ -2636,6 +2685,7 @@ label {
   .top-wrap__title {
     font-size: 32px;
     line-height: 40px;
+    max-width: 200px;
   }
 
   .page .container {
