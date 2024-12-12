@@ -676,7 +676,7 @@
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ name, email, message }),
+                body: formData
             })
                 .then((response) => response.text())
                 .then((data) => {

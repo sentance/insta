@@ -4,7 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
     $message = htmlspecialchars($_POST['message']);
 
-    if (true) {
+    if ($email && $name && $message) {
         $to = "sentance22@gmail.com"; // Replace with your email
         $subject = "New Contact Form Submission";
         $headers = "From: info@instadimes.com";
