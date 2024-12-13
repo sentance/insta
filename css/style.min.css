@@ -1965,7 +1965,7 @@ label {
         -webkit-box-pack: start;
         -ms-flex-pack: start;
         /* justify-content: flex-start; */
-        margin-left: 20px;
+        margin-left: 55px;
     }
     .main-wrap__flex .btn-link {
         width: 50px;
