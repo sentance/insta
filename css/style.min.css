@@ -1936,7 +1936,7 @@ label {
         text-align: left;
     }
     .main-wrap__title {
-        max-width: 262px;
+        /* max-width: 262px; */
         margin: 0;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
@@ -1964,8 +1964,8 @@ label {
     .main-wrap__flex {
         -webkit-box-pack: start;
         -ms-flex-pack: start;
-        justify-content: flex-start;
-        margin: 0;
+        /* justify-content: flex-start; */
+        margin-left: 20px;
     }
     .main-wrap__flex .btn-link {
         width: 50px;
