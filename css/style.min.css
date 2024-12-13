@@ -1697,8 +1697,8 @@ label {
         padding: 24px 32px;
     }
     .faq-wrap__list .item-top__title {
-        font-size: 20px;
-        line-height: 27px;
+        font-size: 14px;
+        line-height: 18px;
     }
     .faq-wrap__list .item-top__icon {
         width: 20px;
@@ -1772,7 +1772,7 @@ label {
         flex-direction: column;
         -webkit-box-align: start;
         -ms-flex-align: start;
-        align-items: flex-start;
+        align-items: center;
     }
     .why-wrap__top--title {
         max-width: 100%;
@@ -1781,6 +1781,7 @@ label {
     .contacts-mobile {
         display: block;
         color: #fff;
+        text-align: center;
         padding-top: 40px;
     }
     .contacts-mobile__title {
@@ -1914,7 +1915,8 @@ label {
         padding: 14px 32px;
     }
     .container {
-        padding: 0 24px;
+        /* padding: 0 24px; */
+        padding: 0;
     }
     .header .container {
         padding: 0 24px;
@@ -1984,16 +1986,16 @@ label {
         margin-right: 8px;
     }
     .main-wrap__bottom img {
-        max-width: 40px;
+        max-width: 50px;
         margin-left: -5px;
     }
     .main-wrap__bottom--title {
-        font-size: 12px;
+        font-size: 13px;
         line-height: 16px;
         max-width: 100%;
     }
     .main-wrap__bottom--title span {
-        font-size: 8px;
+        font-size: 10px;
         line-height: 12px;
     }
     .why {
@@ -2005,6 +2007,7 @@ label {
     }
     .why-wrap__top--text {
         font-size: 14px;
+        text-align: center;
         line-height: 19px;
     }
     .why-wrap__list {
@@ -2070,7 +2073,8 @@ label {
         flex-direction: column;
         -webkit-box-align: start;
         -ms-flex-align: start;
-        align-items: flex-start;
+        align-items: center;
+        text-align: center;
     }
     .services-wrap__top--title {
         max-width: 100%;
@@ -2112,6 +2116,7 @@ label {
         font-size: 20px;
         line-height: 27px;
         margin-top: 32px;
+        text-align: center;
     }
     .services-wrap__list .item-text {
         font-size: 14px;
@@ -2129,7 +2134,8 @@ label {
         flex-direction: column;
         -webkit-box-align: start;
         -ms-flex-align: start;
-        align-items: flex-start;
+        align-items: center;
+        text-align: center;
     }
     .app-wrap__top--title {
         max-width: 100%;
@@ -2154,6 +2160,7 @@ label {
     .app-wrap__flex--content .item-title {
         font-size: 20px;
         line-height: 27px;
+        text-align: center;
     }
     .app-wrap__flex--image {
         display: -webkit-box;
@@ -2243,7 +2250,7 @@ label {
         margin-top: 10px;
     }
     .faq-wrap__list .item-text {
-        font-size: 14px;
+        font-size: 13px;
         line-height: 19px;
         padding-top: 16px;
         margin-top: 16px;
