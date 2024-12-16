@@ -57,7 +57,6 @@ jQuery(document).ready(function ($) {
     });
 
     $('.services-wrap__list').on('wheel', function(e) {
-        console.log("hhhhee")
         if (isScrolling) return;  // Prevent continuous scrolling
         
         // Prevent page scrolling when slider is in focus
@@ -96,6 +95,23 @@ jQuery(document).ready(function ($) {
         faqIt.toggleClass('open');
         faqIt.find('.item-text').slideToggle();
     });
+    $('#toggleButton').click(function () {
+        const icon = $('.app-wrap .item-top__icon');
+        const flexBlock = $('.app-wrap__flex'); // Entire block to show/hide
+    
+        // Toggle active class for the icon
+        icon.toggleClass('active');
+    
+        // Toggle display for the app-wrap__flex block
+        if (flexBlock.is(':visible')) {
+            flexBlock.css('display', 'none');
+        } else {
+            flexBlock.css('display', 'block');
+        }
+    });
+    
+    
+
 
     const anchors = document.querySelectorAll('a[href*="#"]')
 
