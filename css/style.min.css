@@ -2267,7 +2267,8 @@ label {
         flex-direction: column;
         -webkit-box-align: start;
         -ms-flex-align: start;
-        align-items: flex-start;
+        align-items: center;
+        text-align: center;
     }
     .faq-wrap__top--title {
         max-width: 100%;
@@ -2291,7 +2292,7 @@ label {
         align-items: flex-start;
     }
     .faq-wrap__list .item-top__title {
-        max-width: 163px;
+        max-width: 205px;
     }
     .faq-wrap__list .item-top__icon {
         margin-top: 10px;
