@@ -2373,9 +2373,19 @@ label {
     }
 }
 
-.mobile-contacts {
-    display: none;
+/* Hide on desktop and larger screens */
+@media (min-width: 1024px) {
+    .app-wrap__top .item-top__icon {
+        display: none;
+    }
+    .header-wrap__nav .mobile-contacts {
+        display: none;
+    }
 }
-.app-wrap__top .item-top__icon{
- display: none;
+
+/* Show on mobile/tablet (screen width smaller than 1024px) */
+@media (max-width: 1023px) {
+    .app-wrap__top .item-top__icon {
+        display: flex;
+    }
 }
