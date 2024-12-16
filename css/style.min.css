@@ -2366,7 +2366,7 @@ label {
     }
 }
 @media (max-width: 770px) {
-    .mobile-contacts {
+   .header-wrap__nav .mobile-contacts {
         display: flex;
         justify-content: center;
         gap: 20px;
