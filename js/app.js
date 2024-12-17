@@ -35,6 +35,7 @@ jQuery(document).ready(function ($) {
         slidesToShow: 2.25,
         slidesToScroll: 1,
         arrows: false,
+        speed: 1000,
         dots: true,
         responsive: [
             {
