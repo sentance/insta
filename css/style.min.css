@@ -2194,9 +2194,9 @@ label {
     }
     .app-wrap__flex {
         margin-top: 40px;
-        display: none;
     }
     .app-wrap__flex--content {
+        display: none;
         padding: 24px;
         border-radius: 32px;
     }

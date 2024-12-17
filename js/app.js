@@ -97,7 +97,7 @@ jQuery(document).ready(function ($) {
     });
     $('#toggleButton').click(function () {
         const icon = $('.app-wrap .item-top__icon');
-        const flexBlock = $('.app-wrap__flex'); // Entire block to show/hide
+        const flexBlock = $('.app-wrap__flex--content'); // Entire block to show/hide
     
         // Toggle active class for the icon
         icon.toggleClass('active');
