@@ -56,14 +56,17 @@ jQuery(document).ready(function ($) {
         ]
     });
 
-    $('#servicesSlider').on('wheel', function(e) {
-        if (isScrolling) return;  // Prevent continuous scrolling
-        
-        // Prevent page scrolling when slider is in focus
+    $('#servicesSlider').on('wheel', function (e) {
+        // Prevent continuous scrolling
+        if (isScrolling) return;
+    
+        // Prevent page scrolling while interacting with the slider
         e.preventDefault();
+    
         isScrolling = true;
         let sliderScroll = $('.services-wrap__list');
-        // Scroll slider in the direction of wheel scroll
+    
+        // Determine scroll direction and trigger slider scroll
         if (e.originalEvent.deltaY > 0) {
             // Scroll down
             sliderScroll.slick('slickNext');
@@ -71,11 +74,11 @@ jQuery(document).ready(function ($) {
             // Scroll up
             sliderScroll.slick('slickPrev');
         }
-
+    
         // Timeout to prevent continuous scrolling
-        setTimeout(function() {
+        setTimeout(function () {
             isScrolling = false;
-        }, 300);  // Adjust timeout for smoother scrolling effect
+        }, 300); // Adjust timeout for smoother interaction
     });
 
     addEventListener('scroll', () => {
