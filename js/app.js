@@ -56,20 +56,20 @@ jQuery(document).ready(function ($) {
         ]
     });
 
-    $('.services-wrap__list').on('wheel', function(e) {
+    $('#servicesSlider').on('wheel', function(e) {
         if (isScrolling) return;  // Prevent continuous scrolling
         
         // Prevent page scrolling when slider is in focus
         e.preventDefault();
         isScrolling = true;
-
+        let sliderScroll = $('.services-wrap__list');
         // Scroll slider in the direction of wheel scroll
         if (e.originalEvent.deltaY > 0) {
             // Scroll down
-            $(this).slick('slickNext');
+            sliderScroll.slick('slickNext');
         } else {
             // Scroll up
-            $(this).slick('slickPrev');
+            sliderScroll.slick('slickPrev');
         }
 
         // Timeout to prevent continuous scrolling
