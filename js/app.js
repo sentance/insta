@@ -61,26 +61,41 @@ jQuery(document).ready(function ($) {
         // Prevent continuous scrolling
         if (isScrolling) return;
     
-        // Prevent page scrolling while interacting with the slider
-        e.preventDefault();
-    
-        isScrolling = true;
+        // Get slider instance
         let sliderScroll = $('.services-wrap__list');
+        let slick = sliderScroll.slick('getSlick'); // Get the Slick instance
     
-        // Determine scroll direction and trigger slider scroll
+        // Determine scroll direction
         if (e.originalEvent.deltaY > 0) {
             // Scroll down
-            sliderScroll.slick('slickNext');
+            if (slick.currentSlide < slick.slideCount - slick.options.slidesToShow) {
+                e.preventDefault(); // Prevent page scrolling
+                $('body').css('overflow', 'hidden'); // Disable page scrolling
+                sliderScroll.slick('slickNext'); // Move to the next slide
+            } else {
+                // Re-enable page scrolling after the last slide
+                $('body').css('overflow', '');
+            }
         } else {
             // Scroll up
-            sliderScroll.slick('slickPrev');
+            if (slick.currentSlide > 0) {
+                e.preventDefault(); // Prevent page scrolling
+                $('body').css('overflow', 'hidden'); // Disable page scrolling
+                sliderScroll.slick('slickPrev'); // Move to the previous slide
+            } else {
+                // Re-enable page scrolling after the first slide
+                $('body').css('overflow', '');
+            }
         }
     
-        // Timeout to prevent continuous scrolling
+        // Add a timeout to prevent rapid wheel events
+        isScrolling = true;
         setTimeout(function () {
             isScrolling = false;
         }, 300); // Adjust timeout for smoother interaction
     });
+    
+    
 
     addEventListener('scroll', () => {
         addHeaderSticky();
