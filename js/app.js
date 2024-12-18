@@ -31,12 +31,14 @@ jQuery(document).ready(function ($) {
     }
     var isScrolling = false; 
     $('.services-wrap__list').slick({
-        infinite: false,
+        infinite: true,
         slidesToShow: 2.25,
         slidesToScroll: 1,
-        arrows: false,
+        arrows: true,
         speed: 1000,
-        dots: true,
+        prevArrow: '<div class="arrow slick-prev"><div class="arrow-top"></div><div class="arrow-bottom"></div></div>',
+        nextArrow: '<div class="arrow slick-next"><div class="arrow-top"></div><div class="arrow-bottom"></div></div>',
+        dots: false,
         responsive: [
             {
                 breakpoint: 1201,
@@ -56,46 +58,6 @@ jQuery(document).ready(function ($) {
             },
         ]
     });
-
-    $('#servicesSlider').on('wheel', function (e) {
-        // Prevent continuous scrolling
-        if (isScrolling) return;
-    
-        // Get slider instance
-        let sliderScroll = $('.services-wrap__list');
-        let slick = sliderScroll.slick('getSlick'); // Get the Slick instance
-    
-        // Determine scroll direction
-        if (e.originalEvent.deltaY > 0) {
-            // Scroll down
-            if (slick.currentSlide < slick.slideCount - slick.options.slidesToShow) {
-                e.preventDefault(); // Prevent page scrolling
-                $('body').css('overflow', 'hidden'); // Disable page scrolling
-                sliderScroll.slick('slickNext'); // Move to the next slide
-            } else {
-                // Re-enable page scrolling after the last slide
-                $('body').css('overflow', '');
-            }
-        } else {
-            // Scroll up
-            if (slick.currentSlide > 0) {
-                e.preventDefault(); // Prevent page scrolling
-                $('body').css('overflow', 'hidden'); // Disable page scrolling
-                sliderScroll.slick('slickPrev'); // Move to the previous slide
-            } else {
-                // Re-enable page scrolling after the first slide
-                $('body').css('overflow', '');
-            }
-        }
-    
-        // Add a timeout to prevent rapid wheel events
-        isScrolling = true;
-        setTimeout(function () {
-            isScrolling = false;
-        }, 300); // Adjust timeout for smoother interaction
-    });
-    
-    
 
     addEventListener('scroll', () => {
         addHeaderSticky();

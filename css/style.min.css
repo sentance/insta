@@ -1252,6 +1252,9 @@ label {
     }
 }
 @media (max-width: 1200px) {
+    .slick-next {
+        right: 30px;
+    }
     h1 {
         font-size: 80px;
         line-height: 88px;
@@ -2390,3 +2393,116 @@ label {
         display: flex;
     }
 }
+
+/* .slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.slick-prev {
+    left: 10px;
+    width: 0;
+    height: 0;
+    border-left: 0 solid transparent;
+    border-right: 15px solid #c0e864;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.slick-next {
+    right: 10px;
+    width: 0;
+    height: 0;
+    border-right: 0 solid transparent;
+    border-left: 15px solid #c0e864; 
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+} */
+
+.arrow {
+    cursor: pointer;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.1s;
+    width: 50px;
+    z-index: 1000;
+  }
+  
+  .arrow-top,
+  .arrow-bottom {
+    background-color: #c0e864; /* Use your desired color */
+    height: 4px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+  }
+  
+  .arrow-top:after,
+  .arrow-bottom:after {
+    background-color: #113463; /* Contrast color */
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: all 0.15s;
+  }
+  
+  .arrow-top {
+    transform: rotate(45deg);
+    transform-origin: bottom right;
+  }
+  
+  .arrow-top:after {
+    left: 100%;
+    right: 0;
+    transition-delay: 0s;
+  }
+  
+  .arrow-bottom {
+    transform: rotate(-45deg);
+    transform-origin: top right;
+  }
+  
+  .arrow-bottom:after {
+    left: 0;
+    right: 100%;
+    transition-delay: 0.15s;
+  }
+  
+  .arrow:hover .arrow-top:after {
+    left: 0;
+    transition-delay: 0.15s;
+  }
+  
+  .arrow:hover .arrow-bottom:after {
+    right: 0;
+    transition-delay: 0s;
+  }
+  
+  /* .arrow:active {
+    transform: scale(0.9);
+  } */
+  
+  /* Specific positioning for slick-prev */
+  .slick-prev {
+    left: 10px; /* Adjust position as needed */
+    transform: translateY(-50%) rotate(180deg); /* Flip for left arrow */
+  }
+  
+  /* Specific positioning for slick-next */
+  .slick-next {
+    right: 10px; /* Adjust position as needed */
+    transform: translateY(-50%); /* Keep right arrow as is */
+  }
+  .slick-next:active {
+    transform: translateY(-50%) scale(0.95); /* Slightly smaller */
+  }
+  
+  .slick-prev:active {
+    transform: translateY(-50%) rotate(180deg) scale(0.95); /* Slightly smaller */
+  }
+  
