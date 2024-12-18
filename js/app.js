@@ -35,7 +35,6 @@ jQuery(document).ready(function ($) {
         slidesToShow: 2.25,
         slidesToScroll: 1,
         arrows: true,
-        speed: 1000,
         prevArrow: '<div class="arrow slick-prev"><div class="arrow-top"></div><div class="arrow-bottom"></div></div>',
         nextArrow: '<div class="arrow slick-next"><div class="arrow-top"></div><div class="arrow-bottom"></div></div>',
         dots: false,
