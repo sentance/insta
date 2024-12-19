@@ -2435,7 +2435,7 @@ label {
     align-items: center;
     justify-content: center;
     transition: background-color 0.3s, transform 0.2s;
-    z-index: 1000;
+    z-index: 1;
 }
 
 .slick-prev,
@@ -2461,4 +2461,9 @@ label {
 
 .arrow:active {
     transform: scale(0.9); /* Slight click effect */
+}
+#block3 {
+    margin-top: 0; /* Reset margin */
+    padding-top: 0; /* Reset padding */
+    position: relative; /* Ensure consistent positioning */
 }
