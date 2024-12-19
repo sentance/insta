@@ -35,8 +35,8 @@ jQuery(document).ready(function ($) {
         slidesToShow: 2.25,
         slidesToScroll: 1,
         arrows: true,
-        prevArrow: '<div class="arrow slick-prev"><div class="arrow-top"></div><div class="arrow-bottom"></div></div>',
-        nextArrow: '<div class="arrow slick-next"><div class="arrow-top"></div><div class="arrow-bottom"></div></div>',
+        prevArrow: '<div class="arrow slick-prev"><div class="arrow-icon"></div></div>',
+        nextArrow: '<div class="arrow slick-next"><div class="arrow-icon"></div></div>',
         dots: false,
         responsive: [
             {
