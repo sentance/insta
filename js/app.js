@@ -31,12 +31,12 @@ jQuery(document).ready(function ($) {
     }
     var isScrolling = false; 
     $('.services-wrap__list').slick({
-        infinite: true,
+        infinite: false,
         slidesToShow: 2.25,
-        slidesToScroll: 1,
-        arrows: true,
         prevArrow: '<div class="arrow slick-prev"><div class="arrow-icon"></div></div>',
         nextArrow: '<div class="arrow slick-next"><div class="arrow-icon"></div></div>',
+        slidesToScroll: 1,
+        arrows: true,
         dots: false,
         responsive: [
             {
