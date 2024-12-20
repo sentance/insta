@@ -2371,6 +2371,9 @@ label {
     }
 }
 @media (max-width: 770px) {
+    .wrapper .slick-prev, .wrapper .slick-next {
+        display: none;
+    }
    .header-wrap__nav .mobile-contacts {
         display: flex;
         justify-content: center;
